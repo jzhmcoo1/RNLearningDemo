@@ -15,6 +15,7 @@ export default function AddTodo({submitHandler}:AddTodoProps) {
   return (
     <View>
       <TextInput
+        value={text}
         style={styles.input}
         placeholder='Add todo...'
         onChangeText={changeHandler}
@@ -22,7 +23,7 @@ export default function AddTodo({submitHandler}:AddTodoProps) {
       <Button
         onPress={() => {
           submitHandler(text)
-          setText('');
+          changeHandler('')
         }}
         title='Add Todo'
         color='coral'
