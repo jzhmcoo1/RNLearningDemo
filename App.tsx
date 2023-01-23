@@ -1,8 +1,8 @@
-import Home from './screens/Home';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
+import HomeStack from './routes/HomeStack';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -23,21 +23,18 @@ export default function App() {
   }, [loaded]);
 
   const onLayoutRootView = useCallback(async () => {
-    if (appIsReady) {
+    if (loaded) {
       await SplashScreen.hideAsync();
     }
-  }, [appIsReady]);
+  }, [loaded]);
 
   if (!appIsReady) {
     return null;
   }
 
   return (
-    <View
-      style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
-      onLayout={onLayoutRootView}
-    >
-      <Home />
+    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <HomeStack />
     </View>
   );
 }
