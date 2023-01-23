@@ -1,8 +1,9 @@
 import { StyleSheet, View, Text } from 'react-native';
+import { globalStyles } from '~/styles/global';
 
 export default function Home() {
   return (
-    <View style={styles.container}>
+    <View style={globalStyles.container}>
       <Text style={styles.titleText}>Home</Text>
     </View>
   );
