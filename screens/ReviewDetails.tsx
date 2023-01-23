@@ -1,21 +1,11 @@
 import { StyleSheet, View, Text } from 'react-native';
+import { globalStyles } from '~/styles/global';
 
 export default function ReviewDetails() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>ReviewDetails</Text>
+    <View style={globalStyles.container}>
+      <Text style={globalStyles.titleText}>ReviewDetails</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-});

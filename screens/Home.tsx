@@ -4,20 +4,7 @@ import { globalStyles } from '~/styles/global';
 export default function Home() {
   return (
     <View style={globalStyles.container}>
-      <Text style={styles.titleText}>Home</Text>
+      <Text style={globalStyles.titleText}>Home</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  titleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontFamily: 'RobotoRegular',
-  },
-});
