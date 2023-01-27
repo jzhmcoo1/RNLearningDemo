@@ -21,7 +21,7 @@ export default function App() {
       setAppIsReady(true);
     }
   }, [loaded]);
-
+ 
   const onLayoutRootView = useCallback(async () => {
     if (loaded) {
       await SplashScreen.hideAsync();

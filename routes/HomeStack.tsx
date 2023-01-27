@@ -9,14 +9,21 @@ const screens = [
   {
     name: 'About',
     component: About,
+    options: {},
   },
   {
     name: 'Home',
     component: Home,
+    options: {
+      title: 'Game Zone',
+    },
   },
   {
     name: 'ReviewDetails',
     component: ReviewDetails,
+    options: {
+      title: 'Review Details',
+    },
   },
 ];
 
@@ -25,13 +32,26 @@ const Stack = createNativeStackNavigator();
 const HomeStack = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Navigator
+        initialRouteName='Home'
+        // set default options
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#f4511e',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      >
         {screens.map((screen, index) => {
           return (
             <Stack.Screen
               key={index}
               name={screen.name}
               component={screen.component}
+              options={screen.options}
             />
           );
         })}
