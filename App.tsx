@@ -1,8 +1,9 @@
+import 'react-native-gesture-handler';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback, useEffect, useState } from 'react';
 import { View } from 'react-native';
-import HomeStack from './routes/HomeStack';
+import AppNavigator from './routes/RootDrawer';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -21,7 +22,7 @@ export default function App() {
       setAppIsReady(true);
     }
   }, [loaded]);
- 
+
   const onLayoutRootView = useCallback(async () => {
     if (loaded) {
       await SplashScreen.hideAsync();
@@ -34,7 +35,7 @@ export default function App() {
 
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-      <HomeStack />
+      <AppNavigator />
     </View>
   );
 }

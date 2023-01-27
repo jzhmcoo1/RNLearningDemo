@@ -45,7 +45,9 @@ export default function Home({ navigation }: NativeStackScreenProps<any>) {
           return (
             <View style={globalStyles.container}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('ReviewDetails', item)}
+                onPress={() => {
+                  navigation.navigate('ReviewDetails', item.item);
+                }}
               >
                 <Text style={globalStyles.titleText}>{item.item.title}</Text>
               </TouchableOpacity>

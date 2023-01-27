@@ -1,7 +1,8 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '~/screens/Home';
-import ReviewDetails from '~/screens/ReviewDetails';
+import About from '~/screens/About';
 
 const screens = [
   {
@@ -12,20 +13,20 @@ const screens = [
     },
   },
   {
-    name: 'ReviewDetails',
-    component: ReviewDetails,
+    name: 'About',
+    component: About,
     options: {
-      title: 'Review Details',
+      title: 'About Game Zone',
     },
   },
 ];
 
-const Stack = createNativeStackNavigator();
+const { Navigator, Screen } = createNativeStackNavigator();
 
-const HomeStack = () => {
+const AboutStack = () => {
   return (
-    <Stack.Navigator
-      initialRouteName='Home'
+    <Navigator
+      initialRouteName='About'
       // set default options
       screenOptions={{
         headerStyle: {
@@ -39,7 +40,7 @@ const HomeStack = () => {
     >
       {screens.map((screen, index) => {
         return (
-          <Stack.Screen
+          <Screen
             key={index}
             name={screen.name}
             component={screen.component}
@@ -47,8 +48,8 @@ const HomeStack = () => {
           />
         );
       })}
-    </Stack.Navigator>
+    </Navigator>
   );
 };
 
-export default HomeStack;
+export default AboutStack;
